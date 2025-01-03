@@ -1,6 +1,25 @@
 {{ define "main" }}
+<article class="max-w-4xl mx-auto px-4 py-8">
+    <!-- Article Header -->
+    <header class="mb-8">
+        <div class="text-sm text-gray-500 mb-2">{{ .Params.category }}</div>
+        <h1 class="text-4xl font-serif font-bold mb-4">{{ .Title }}</h1>
+        <div class="text-xl text-gray-600 mb-4">{{ .Params.description }}</div>
+        <div class="text-sm text-gray-500">
+            By {{ .Params.author }} • {{ .Date.Format "January 2, 2006" }}
+        </div>
+    </header>
 
-{{ partial "jumbotron" (dict "imageUrl" "/img/7.jpg" "title" "This is where the heading goes" "subtitle" "This is where the subtitle goes") }}
-{{ .Content }}
+    <!-- Featured Image -->
+    {{ if .Params.image }}
+    <div class="mb-8">
+        <img src="{{ .Params.image }}" class="w-full h-auto" alt="{{ .Title }}">
+    </div>
+    {{ end }}
 
+    <!-- Article Content -->
+    <div class="prose max-w-none">
+        {{ .Content }}
+    </div>
+</article>
 {{ end }}
