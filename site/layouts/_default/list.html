@@ -1,16 +1,24 @@
 {{ define "main" }}
-
-{{ partial "jumbotron" (dict "imageUrl" "/img/blog-index.jpg" "title" "Latest stories") }}
-
-<div class="mw7 center">
-  <ul id="blog-list" class="flex-ns flex-wrap mhn1-ns pa3">
-      {{ range (.Paginator 4).Pages.ByPublishDate.Reverse }}
-          <li class="w-50-ns ph1-ns flex">
-            {{ .Render "li"}}
-          </li>
-      {{ end }}
-  </ul>
-  {{ partial "pagination" . }}
+<div class="max-w-7xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-serif font-bold mb-8">{{ .Title }}</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {{ range .Pages }}
+        <article class="border-b pb-8">
+            {{ if .Params.image }}
+            <div class="aspect-video bg-gray-200 mb-4">
+                <img src="{{ .Params.image }}" class="w-full h-full object-cover" alt="{{ .Title }}">
+            </div>
+            {{ end }}
+            <h2 class="text-xl font-serif font-bold mb-2">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+            <p class="text-gray-600 mb-4">{{ .Params.description }}</p>
+            <div class="text-sm text-gray-500">
+                By {{ .Params.author }} • {{ .Date.Format "January 2, 2006" }}
+            </div>
+        </article>
+        {{ end }}
+    </div>
 </div>
-
-{{end}}
+{{ end }}
