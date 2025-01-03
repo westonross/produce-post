@@ -9,6 +9,7 @@ collections:
   - name: "articles"
     label: "Articles"
     folder: "site/content/post"
+    path: "{{slug}}/index"    # Add this line
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
