@@ -3,7 +3,7 @@ site_config: #Add this new section at the top
   languageCode: "en-us"
   title: "The Produce Post"
   taxonomies:
-    category: "categories"
+    category: "category"
     tag: "tags"
 
 backend:
@@ -22,12 +22,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Author", name: "author", widget: "string"}
-      - label: "Categories"
-              name: "categories"
-              widget: "select"
-              multiple: true
-              options: ["Fresh News", "Markets", "Opinion", "Recipes", "Culture"]
-              default: ["Fresh News"]
+      - {label: "Category", name: "category", widget: "select", options: ["Fresh News", "Markets", "Opinion", "Recipes", "Culture"]}
       - {label: "Featured Image", name: "image", widget: "image", required: false}
       - {label: "Summary", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
