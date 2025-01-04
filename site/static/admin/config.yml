@@ -1,3 +1,11 @@
+site_config: #Add this new section at the top
+  baseURL: "/"
+  languageCode: "en-us"
+  title: "The Produce Post"
+  taxonomies:
+    category: "categories"
+    tag: "tags"
+
 backend:
   name: git-gateway
   branch: main
@@ -14,7 +22,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Author", name: "author", widget: "string"}
-      - {label: "Category", name: "category", widget: "select", options: ["Fresh News", "Markets", "Opinion", "Recipes", "Culture"]}
+      - {label: "Category", name: "categories", widget: "select", options: ["Fresh News", "Markets", "Opinion", "Recipes", "Culture"]}
       - {label: "Featured Image", name: "image", widget: "image", required: false}
       - {label: "Summary", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
