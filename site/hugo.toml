@@ -3,11 +3,9 @@ languageCode = "en-us"
 languageLang = "en"
 title = "The Produce Post"
 
-# Remove the disableKinds line since we want taxonomies
-# disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
-
 [taxonomies]
   category = "category"
+  tag = "tags"
 
 [params]
   images = ["img/og-image.jpg"]
