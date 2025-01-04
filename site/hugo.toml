@@ -5,7 +5,7 @@ title = "The Produce Post"
 
 [taxonomies]
   category = "category"
-  tag = "tags"
+  tags = "tags"
 
 [params]
   images = ["img/og-image.jpg"]
