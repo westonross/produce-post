@@ -1,0 +1,80 @@
+{{ define "main" }}
+<article class="max-w-4xl mx-auto px-4 py-8">
+    <!-- Article Header -->
+    <header class="mb-8">
+        <div class="text-sm text-gray-500 mb-2">{{ .Params.category }}</div>
+        <h1 class="text-4xl font-serif font-bold mb-4">{{ .Title }}</h1>
+        <div class="text-xl text-gray-600 mb-4">{{ .Params.description }}</div>
+        <div class="text-sm text-gray-500">
+            By {{ .Params.author }} • {{ .Date.Format "January 2, 2006" }}
+        </div>
+    </header>
+
+{{ with resources.Get .Params.image }}
+    {{ $image := .Resize "800x" }}
+    <div class="mb-8">
+        <img src="{{ $image.RelPermalink }}" 
+             alt="{{ $.Title }}"
+             class="w-full h-auto">
+        <div class="text-sm text-gray-600 italic mt-2">
+            {{ $.Params.image_caption }}
+            {{ if or $.Params.image_credit $.Params.image_date }}
+            <span class="text-gray-500">
+                {{ with $.Params.image_date }}({{ . }}){{ end }}
+                {{ with $.Params.image_credit }} • Credit: {{ . }}{{ end }}
+            </span>
+            {{ end }}
+        </div>
+    </div>
+{{ end }}
+
+    <!-- Article Content -->
+    <div class="prose prose-lg max-w-none">
+        {{ .Content }}
+<style>
+    .prose {
+        max-width: none;
+        width: 100%;
+    }
+    .prose p {
+        margin-top: 1em;        /* Reduced from 1.5em */
+        margin-bottom: 1em;     /* Reduced from 1.5em */
+        line-height: 1.6;       /* Reduced from 1.8 */
+    }
+    .prose h2 {
+        font-size: 1.5em;
+        margin-top: 1.5em;      /* Reduced from 2em */
+        margin-bottom: 0.7em;   /* Reduced from 1em */
+        font-weight: 700;
+    }
+    .prose h3 {
+        font-size: 1.25em;
+        margin-top: 1.2em;      /* Reduced from 1.6em */
+        margin-bottom: 0.5em;   /* Reduced from 0.6em */
+        font-weight: 600;
+    }
+    .prose ul {
+        margin-top: 1em;        /* Reduced from 1.5em */
+        margin-bottom: 1em;     /* Reduced from 1.5em */
+        padding-left: 1.625em;
+        list-style-type: disc;
+    }
+    .prose li {
+        margin-top: 0.3em;      /* Reduced from 0.5em */
+        margin-bottom: 0.3em;   /* Reduced from 0.5em */
+    }
+    .prose blockquote {
+        font-style: italic;
+        border-left: 4px solid #e5e7eb;
+        padding-left: 1.5em;
+        margin: 1em 0;          /* Reduced from 1.5em */
+        color: #4b5563;
+    }
+    .prose hr {
+        margin: 2em 0;          /* Reduced from 3em */
+        border-top: 2px solid #e5e7eb;
+    }
+</style>
+    </div>
+</article>
+{{ end }}
