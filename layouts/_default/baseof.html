@@ -7,11 +7,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <style>
         a:hover {
-            color: #FFA500; /* Orange color for hover */
+            color: #FFA500;
             transition: color 0.2s ease;
         }
     </style>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body class="min-h-screen bg-gray-50">
     <!-- Top Bar -->
@@ -24,39 +23,39 @@
         </div>
     </div>
 
-<!-- Header -->
-<header class="bg-amber-100 border-b"> <!-- Try amber-100 for a soft orange/mango -->
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="flex items-center justify-between py-4">
-            <button class="h-6 w-6 text-gray-600">☰</button>
-            <h1 class="text-3xl font-serif font-bold text-gray-900">
-                <a href="/">The Produce Post</a>
-            </h1>
-            <div class="flex items-center space-x-4">
-                <span class="h-6 w-6 text-gray-600">🔍</span>
-                <span class="h-6 w-6 text-gray-600">👤</span>
+    <!-- Header -->
+    <header class="bg-amber-100 border-b">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <button class="h-6 w-6 text-gray-600">☰</button>
+                <h1 class="text-3xl font-serif font-bold text-gray-900">
+                    <a href="{{ .Site.BaseURL }}">The Produce Post</a>
+                </h1>
+                <div class="flex items-center space-x-4">
+                    <span class="h-6 w-6 text-gray-600">🔍</span>
+                    <span class="h-6 w-6 text-gray-600">👤</span>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<!-- Navigation -->
-<nav class="bg-white border-b">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="flex items-center space-x-6 h-12 text-sm">
-            <a href="/" class="text-gray-900 font-medium">Home</a>
-            {{ $categories := slice }}
-            {{ range .Site.RegularPages }}
-                {{ $categories = $categories | append .Params.category }}
-            {{ end }}
-            {{ range uniq $categories }}
-                {{ with . }}
-                <a href="/categories/{{ . | urlize }}/" class="text-gray-600">{{ . }}</a>
+    <!-- Navigation -->
+    <nav class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center space-x-6 h-12 text-sm">
+                <a href="{{ .Site.BaseURL }}" class="text-gray-900 font-medium">Home</a>
+                {{ $categories := slice }}
+                {{ range .Site.RegularPages }}
+                    {{ $categories = $categories | append .Params.category }}
                 {{ end }}
-            {{ end }}
+                {{ range uniq $categories }}
+                    {{ with . }}
+                    <a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}/" class="text-gray-600">{{ . }}</a>
+                    {{ end }}
+                {{ end }}
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
     <!-- Market Ticker -->
     <div class="bg-gray-100 border-b">
