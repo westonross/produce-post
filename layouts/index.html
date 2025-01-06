@@ -11,8 +11,8 @@
                     {{ with resources.Get $imagePath }}
                         {{ $image := .Resize "600x" }}
                         <div class="mb-4">
-                            <a href="{{ $currentArticle.Permalink }}">
-                                <img src="{{ $image.Permalink }}" 
+                            <a href='{{ relURL $currentArticle.RelPermalink }}'>
+                                <img src='{{ relURL $image.RelPermalink }}' 
                                      class="w-full h-full object-cover" 
                                      alt="{{ $currentArticle.Title }}">
                             </a>
@@ -23,7 +23,7 @@
                     {{ end }}
                 {{ end }}
                 <h2 class="text-3xl font-serif font-bold mb-2">
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    <a href='{{ relURL .RelPermalink }}'>{{ .Title }}</a>
                 </h2>
                 <p class="text-xl text-gray-600 mb-4">{{ .Params.description }}</p>
                 <div class="text-sm text-gray-500">
@@ -39,7 +39,7 @@
             <div class="pb-6 border-b last:border-0">
                 <div class="text-sm font-medium text-gray-500 mb-2">{{ .Params.category }}</div>
                 <h4 class="font-serif font-medium leading-snug">
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    <a href='{{ relURL .RelPermalink }}'>{{ .Title }}</a>
                 </h4>
                 <div class="text-sm text-gray-500 mt-2">{{ .Date.Format "January 2, 2006" }}</div>
             </div>

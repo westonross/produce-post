@@ -1,8 +1,8 @@
 baseURL = "https://westonross.github.io/produce-post/"
+relativeURLs = true
 languageCode = "en-us"
 title = "The Produce Post"
 publishDir = "docs"
-canonifyURLs = true
 
 [taxonomies]
   category = "category"
