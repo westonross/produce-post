@@ -1,6 +1,7 @@
-baseURL = "/"
+baseURL = "https://westonross.github.io/produce-post/"
 languageCode = "en-us"
 title = "The Produce Post"
+publishDir = "docs"
 
 [taxonomies]
   category = "category"
