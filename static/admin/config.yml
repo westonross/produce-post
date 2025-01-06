@@ -2,6 +2,10 @@ backend:
   name: git-gateway
   branch: main
 
+auth:
+  provider: netlify
+  identity_url: https://api.netlify.com/v1/identity
+
 media_folder: "static/img"
 public_folder: "/img"
 
