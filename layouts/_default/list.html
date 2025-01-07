@@ -7,23 +7,24 @@
         {{ range where .Site.RegularPages "Params.category" $categoryTitle }}
             {{ $currentArticle := . }}
             <article class="border-b pb-8">
-{{ if .Params.image }}
-    {{ with resources.Get .Params.image }}
-        {{ $image := .Resize "400x" }}
-        <div class="aspect-video bg-gray-200 mb-4">
-            <a href="{{ $currentArticle.RelPermalink }}">
-                <img src="{{ $image.RelPermalink }}" 
-                     class="w-full h-full object-cover" 
-                     alt="{{ $currentArticle.Title }}">
-            </a>
-            <div class="text-sm text-gray-500 mt-1">
-                {{ $currentArticle.Params.image_credit }} • {{ $currentArticle.Params.image_date }}
-            </div>
-        </div>
-    {{ end }}
-{{ end }}
+                {{ if .Params.image }}
+                    {{ $imagePath := printf "img/%s" .Params.image }}
+                    {{ with resources.Get $imagePath }}
+                        {{ $image := .Resize "400x" }}
+                        <div class="aspect-video bg-gray-200 mb-4">
+                            <a href="{{ $.Site.BaseURL }}articles/{{ $currentArticle.File.TranslationBaseName }}/">
+                                <img src="{{ $image.RelPermalink }}" 
+                                     class="w-full h-full object-cover" 
+                                     alt="{{ $currentArticle.Title }}">
+                            </a>
+                            <div class="text-sm text-gray-500 mt-1">
+                                {{ $currentArticle.Params.image_credit }} • {{ $currentArticle.Params.image_date }}
+                            </div>
+                        </div>
+                    {{ end }}
+                {{ end }}
                 <h2 class="text-xl font-serif font-bold mb-2">
-                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    <a href="{{ $.Site.BaseURL }}articles/{{ .File.TranslationBaseName }}/">{{ .Title }}</a>
                 </h2>
                 <p class="text-gray-600 mb-4">{{ .Params.description }}</p>
                 <div class="text-sm text-gray-500">
