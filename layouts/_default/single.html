@@ -11,19 +11,17 @@
     </header>
 
     {{ if .Params.image }}
-        {{ $imagePath := printf "img/%s" .Params.image }}
-        {{ with resources.Get $imagePath }}
+        {{ with resources.Get .Params.image }}
             {{ $image := .Resize "800x" }}
             <div class="mb-8">
-                <img src="{{ $image.RelPermalink }}" 
+                <img src="{{ $image.Permalink }}" 
                      alt="{{ $.Title }}"
                      class="w-full h-auto">
-                <div class="text-sm text-gray-600 italic mt-2">
+                <div class="text-sm bg-gray-100 p-3 mt-2">
                     {{ $.Params.image_caption }}
                     {{ if or $.Params.image_credit $.Params.image_date }}
-                        <span class="text-gray-500">
-                            {{ with $.Params.image_date }}({{ . }}){{ end }}
-                            {{ with $.Params.image_credit }} • Credit: {{ . }}{{ end }}
+                        <span class="text-gray-600">
+                            • {{ $.Params.image_credit }} • {{ $.Params.image_date }}
                         </span>
                     {{ end }}
                 </div>

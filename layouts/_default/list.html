@@ -8,21 +8,21 @@
             {{ $currentArticle := . }}
             <article class="border-b pb-8">
                 {{ if .Params.image }}
-                    {{ $imagePath := printf "img/%s" .Params.image }}
-                    {{ with resources.Get $imagePath }}
+                    {{ with resources.Get .Params.image }}
                         {{ $image := .Resize "400x" }}
-                        <div class="aspect-video bg-gray-200 mb-4">
-                            <a href="{{ $currentArticle.Permalink }}">
-                                <img src="{{ $image.RelPermalink }}" 
+                        <div class="mb-4">
+                            <a href="{{ $currentArticle.Permalink }}" class="block aspect-[4/3] overflow-hidden">
+                                <img src="{{ $image.Permalink }}" 
                                      class="w-full h-full object-cover" 
                                      alt="{{ $currentArticle.Title }}">
                             </a>
-                            <div class="text-sm text-gray-500 mt-1">
-                                {{ $currentArticle.Params.image_credit }} • {{ $currentArticle.Params.image_date }}
+                            <div class="text-sm text-gray-600 mt-2">
+                                {{ $currentArticle.Params.image_caption }} • {{ $currentArticle.Params.image_credit }} • {{ $currentArticle.Params.image_date }}
                             </div>
                         </div>
                     {{ end }}
                 {{ end }}
+                
                 <h2 class="text-xl font-serif font-bold mb-2">
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
                 </h2>
