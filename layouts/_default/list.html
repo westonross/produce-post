@@ -1,18 +1,4 @@
 {{ define "main" }}
-<!-- Debug section -->
-<div class="bg-yellow-200 p-4 mb-4">
-    <p class="font-bold">Debug URLs:</p>
-    {{ $categoryTitle := .Title }}
-    {{ range first 1 (where .Site.RegularPages "Params.category" $categoryTitle) }}
-        <div>1. RelURL: {{ relURL (printf "articles/%s" .File.TranslationBaseName) }}</div>
-        <div>2. Permalink: {{ .Permalink }}</div>
-        <div>3. RelPermalink: {{ .RelPermalink }}</div>
-        <div>4. Site.BaseURL: {{ $.Site.BaseURL }}</div>
-        <div>5. TranslationBaseName: {{ .File.TranslationBaseName }}</div>
-        <div>6. File Path: {{ .File.Path }}</div>
-    {{ end }}
-</div>
-
 <div class="max-w-7xl mx-auto px-4 py-8">
     <h1 class="text-3xl font-serif font-bold mb-8">{{ .Title }}</h1>
     
@@ -26,7 +12,7 @@
                     {{ with resources.Get $imagePath }}
                         {{ $image := .Resize "400x" }}
                         <div class="aspect-video bg-gray-200 mb-4">
-                            <a href="{{ relURL (printf "articles/%s" $currentArticle.File.TranslationBaseName) }}">
+                            <a href="{{ $currentArticle.Permalink }}">
                                 <img src="{{ $image.RelPermalink }}" 
                                      class="w-full h-full object-cover" 
                                      alt="{{ $currentArticle.Title }}">
@@ -38,7 +24,7 @@
                     {{ end }}
                 {{ end }}
                 <h2 class="text-xl font-serif font-bold mb-2">
-                    <a href="{{ relURL (printf "articles/%s" .File.TranslationBaseName) }}">{{ .Title }}</a>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
                 </h2>
                 <p class="text-gray-600 mb-4">{{ .Params.description }}</p>
                 <div class="text-sm text-gray-500">
