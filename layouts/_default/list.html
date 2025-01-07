@@ -1,4 +1,18 @@
 {{ define "main" }}
+<!-- Debug section -->
+<div class="bg-yellow-200 p-4 mb-4">
+    <p class="font-bold">Debug URLs:</p>
+    {{ $categoryTitle := .Title }}
+    {{ range first 1 (where .Site.RegularPages "Params.category" $categoryTitle) }}
+        <div>1. RelURL: {{ relURL (printf "articles/%s" .File.TranslationBaseName) }}</div>
+        <div>2. Permalink: {{ .Permalink }}</div>
+        <div>3. RelPermalink: {{ .RelPermalink }}</div>
+        <div>4. Site.BaseURL: {{ $.Site.BaseURL }}</div>
+        <div>5. TranslationBaseName: {{ .File.TranslationBaseName }}</div>
+        <div>6. File Path: {{ .File.Path }}</div>
+    {{ end }}
+</div>
+
 <div class="max-w-7xl mx-auto px-4 py-8">
     <h1 class="text-3xl font-serif font-bold mb-8">{{ .Title }}</h1>
     
