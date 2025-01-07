@@ -43,4 +43,63 @@
         </div>
     </header>
 
-    [... rest of the file remains exactly the same ...]
+<!-- Navigation -->
+<nav class="bg-white border-b">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-center space-x-6 h-12 text-sm">
+            <a href="{{ .Site.BaseURL }}" class="text-gray-900 font-medium">Home</a>
+            {{ $categories := slice }}
+            {{ range .Site.RegularPages }}
+                {{ $categories = $categories | append .Params.category }}
+            {{ end }}
+            {{ range uniq $categories }}
+                {{ with . }}
+                    <a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}/" class="text-gray-600">{{ . }}</a>
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</nav>
+
+    <!-- Market Ticker -->
+    <div class="bg-gray-100 border-b">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center space-x-8 h-10 text-sm">
+                <div class="flex items-center space-x-2">
+                    <span class="font-medium">Avocados</span>
+                    <span>$2.49</span>
+                    <span class="text-green-600">+0.32</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="font-medium">Heirloom</span>
+                    <span>$4.99</span>
+                    <span class="text-red-600">-0.15</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="font-medium">Kale Futures</span>
+                    <span>$3.29</span>
+                    <span class="text-green-600">+0.89</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-12">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="text-center">
+                <div class="text-2xl font-serif font-bold mb-4">The Produce Post</div>
+                <div class="text-gray-400 text-sm">
+                    "All the News That's Fresh to Print"<br>
+                    © {{ now.Format "2006" }} The Produce Post - All Rights Reserved
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
