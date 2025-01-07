@@ -3,7 +3,7 @@ title: "Letter to the Editor: Cucumber's Concern"
 date: 2024-01-04
 author: "English Cucumber"
 category: "Fresh News"
-description: "Re: The Rise of Pickle Culture and Our Changing Appetites (Farm & Table, Dec. 28)"
+description: "Re: The Rise of Pickle Culture and Our Changing Appetites (Farm & Table, Dec. 27)"
 image: "img/cucumber-market.jpg"
 image_caption: "A fresh cucumber display at Union Square Farmers Market, untainted by pickling influence"
 image_credit: "Market Scene/The Produce Post"
