@@ -10,16 +10,16 @@ export default defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: "static/images",
-      publicFolder: "static",
+      mediaRoot: "assets/img",
+      publicFolder: "assets",
     },
   },
   schema: {
     collections: [
       {
-        name: "post",
-        label: "Posts",
-        path: "content/posts",
+        name: "article",
+        label: "Articles",
+        path: "content/articles",
         format: "md",
         fields: [
           {
