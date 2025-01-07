@@ -5,25 +5,25 @@
         <div class="lg:col-span-2">
             {{ $articles := where .Site.RegularPages "Section" "articles" }}
             {{ range first 1 $articles }}
-                {{ $currentArticle := . }}
                 {{ if .Params.image }}
-                    {{ $imagePath := printf "img/%s" .Params.image }}
-                    {{ with resources.Get $imagePath }}
-                        {{ $image := .Resize "600x" }}
+                    <!-- Get image from assets directory -->
+                    {{ $image := resources.Get .Params.image }}
+                    {{ with $image }}
+                        {{ $processed := .Resize "600x" }}
                         <div class="mb-4">
-                            <a href="{{ .Site.BaseURL }}articles/{{ $currentArticle.File.TranslationBaseName }}/">
-                                <img src="{{ $image.RelPermalink }}" 
+                            <a href="{{ $.Site.BaseURL }}articles/{{ $.File.TranslationBaseName }}">
+                                <img src="{{ $processed.RelPermalink }}" 
                                      class="w-full h-full object-cover" 
-                                     alt="{{ $currentArticle.Title }}">
+                                     alt="{{ $.Title }}">
                             </a>
                             <div class="text-sm text-gray-500 mt-1">
-                                {{ $currentArticle.Params.image_credit }} • {{ $currentArticle.Params.image_date }}
+                                {{ $.Params.image_credit }} • {{ $.Params.image_date }}
                             </div>
                         </div>
                     {{ end }}
                 {{ end }}
                 <h2 class="text-3xl font-serif font-bold mb-2">
-                    <a href="{{ .Site.BaseURL }}articles/{{ .File.TranslationBaseName }}/">{{ .Title }}</a>
+                    <a href="{{ $.Site.BaseURL }}articles/{{ .File.TranslationBaseName }}">{{ .Title }}</a>
                 </h2>
                 <p class="text-xl text-gray-600 mb-4">{{ .Params.description }}</p>
                 <div class="text-sm text-gray-500">
@@ -39,7 +39,7 @@
             <div class="pb-6 border-b last:border-0">
                 <div class="text-sm font-medium text-gray-500 mb-2">{{ .Params.category }}</div>
                 <h4 class="font-serif font-medium leading-snug">
-                    <a href="{{ .Site.BaseURL }}articles/{{ .File.TranslationBaseName }}/">{{ .Title }}</a>
+                    <a href="{{ $.Site.BaseURL }}articles/{{ .File.TranslationBaseName }}">{{ .Title }}</a>
                 </h4>
                 <div class="text-sm text-gray-500 mt-2">{{ .Date.Format "January 2, 2006" }}</div>
             </div>
