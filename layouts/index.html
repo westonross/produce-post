@@ -5,13 +5,6 @@
         <div class="lg:col-span-2">
             {{ $articles := where .Site.RegularPages "Section" "articles" }}
             {{ range first 1 $articles }}
-                <!-- Debug article params -->
-                Debug article: {{ .Title }}
-                Params check: 
-                - image_caption: "{{ .Params.image_caption }}"
-                - image_credit: "{{ .Params.image_credit }}"
-                - image_date: "{{ .Params.image_date }}"
-                
                 {{ if .Params.image }}
                     {{ $article := . }}
                     {{ with resources.Get .Params.image }}
@@ -22,9 +15,8 @@
                                      class="w-full h-auto object-cover" 
                                      alt="{{ $article.Title }}">
                             </a>
-                            <!-- Try accessing article params directly -->
                             <div class="text-sm text-gray-600 mt-2">
-                                {{ $article.Params.image_credit }} • {{ $article.Params.image_date }}
+                                {{ $article.Params.image_caption }} • {{ $article.Params.image_credit }} • {{ $article.Params.image_date }}
                             </div>
                         </div>
                     {{ end }}
