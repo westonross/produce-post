@@ -1,4 +1,3 @@
-
 name: Tina Publish
 on:
   push:
@@ -22,9 +21,9 @@ jobs:
         with:
           hugo-version: 'latest'
       - name: Build site
-        run: hugo --minify
+        run: hugo --minify -d docs
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./docs

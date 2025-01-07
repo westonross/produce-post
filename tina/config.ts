@@ -1,4 +1,3 @@
-
 import { defineConfig } from "tinacms";
 
 export default defineConfig({
@@ -6,8 +5,8 @@ export default defineConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
   token: process.env.TINA_TOKEN!,
   build: {
-    outputFolder: "admin",
-    publicFolder: "static",
+    outputFolder: "docs/admin",
+    publicFolder: "docs",
   },
   media: {
     tina: {
