@@ -2,9 +2,9 @@ import { defineConfig } from "tinacms";
 
 export default defineConfig({
   branch: "master",
-  clientId: "b9f2e0d0-e9d6-4479-81cc-7309d0e59d8f",  // Your client ID from dashboard
-  token: "820c1c73d752a2a155967de7714f26c584963100",  // Your GitHub Action token
-  basePath: "/produce-post",  // For GitHub Pages
+  clientId: "b9f2e0d0-e9d6-4479-81cc-7309d0e59d8f",
+  token: "820c1c73d752a2a155967de7714f26c584963100",
+  basePath: "/produce-post",
   build: {
     outputFolder: "docs/admin",
     publicFolder: "docs",
@@ -46,4 +46,11 @@ export default defineConfig({
       },
     ],
   },
+  // Add this search configuration
+  search: {
+    tina: {
+      indexerToken: "eed4c56d12540697aee13fbaa42165599711772c", // Use your Search token from Tina dashboard
+      stopwordLanguages: ["eng"]
+    },
+  }
 })
