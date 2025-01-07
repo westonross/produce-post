@@ -1,10 +1,11 @@
 import { defineConfig } from "tinacms";
 
+const branch = process.env.GITHUB_BRANCH || process.env.HEAD || "master";
+
 export default defineConfig({
-  branch: "master",
-  clientId: "b9f2e0d0-e9d6-4479-81cc-7309d0e59d8f",
-  token: "820c1c73d752a2a155967de7714f26c584963100",
-  basePath: "/produce-post",
+  branch,
+  token: process.env.TINA_TOKEN,
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
   build: {
     outputFolder: "docs/admin",
     publicFolder: "docs",
@@ -46,11 +47,4 @@ export default defineConfig({
       },
     ],
   },
-  // Add this search configuration
-  search: {
-    tina: {
-      indexerToken: "eed4c56d12540697aee13fbaa42165599711772c", // Use your Search token from Tina dashboard
-      stopwordLanguages: ["eng"]
-    },
-  }
 })
