@@ -4,7 +4,6 @@ export default defineConfig({
   branch: "master",  // <-- Changed to master
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
   token: process.env.TINA_TOKEN!,
-  // ...
   build: {
     outputFolder: "docs/admin",
     publicFolder: "docs",
