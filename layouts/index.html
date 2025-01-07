@@ -9,16 +9,14 @@
                     {{ with resources.Get .Params.image }}
                         {{ $image := .Resize "800x" }}
                         <div class="mb-6">
-                            <figure class="mb-2">
-                                <a href="{{ $.Permalink }}">
-                                    <img src="{{ $image.Permalink }}" 
-                                         class="w-full h-auto object-cover rounded-lg" 
-                                         alt="{{ $.Title }}">
-                                </a>
-                                <figcaption class="text-sm text-gray-600 italic mt-2">
-                                    {{ $.Params.image_credit }} • {{ $.Params.image_date }}
-                                </figcaption>
-                            </figure>
+                            <a href="{{ $.Permalink }}">
+                                <img src="{{ $image.Permalink }}" 
+                                     class="w-full h-auto object-cover mb-2" 
+                                     alt="{{ $.Title }}">
+                            </a>
+                            <div class="text-sm text-gray-500">
+                                {{ $.Params.image_credit }} • {{ $.Params.image_date }}
+                            </div>
                         </div>
                     {{ end }}
                 {{ end }}
