@@ -1,9 +1,10 @@
 import { defineConfig } from "tinacms";
 
 export default defineConfig({
-  branch: "master",  // <-- Changed to master
-  clientId: "b9f2e0d0-e9d6-4479-81cc-7309d0e59d8f",
-  token: "15ee35ebaea6034ced37dd9f98ae45dcaa37ea39",
+  branch: "master",
+  clientId: "b9f2e0d0-e9d6-4479-81cc-7309d0e59d8f",  // Your client ID from dashboard
+  token: "15ee35ebaea6034ced37dd9f98ae45dcaa37ea39",  // Your GitHub Action token
+  basePath: "/produce-post",  // For GitHub Pages
   build: {
     outputFolder: "docs/admin",
     publicFolder: "docs",
