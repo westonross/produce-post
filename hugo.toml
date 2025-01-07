@@ -7,3 +7,11 @@ publishDir = "docs"
 [taxonomies]
   category = "category"
   tag = "tags"
+
+  [module]
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "admin"
+    target = "static/admin"
