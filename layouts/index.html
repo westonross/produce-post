@@ -1,34 +1,25 @@
 {{ define "main" }}
-<!-- Debug: Start of template -->
-{{ printf "Debug: Number of articles: %d" (len (where .Site.RegularPages "Section" "articles")) }}
-
 <div class="max-w-7xl mx-auto px-4 py-8">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <!-- Featured Story Column -->
         <div class="lg:col-span-2">
             {{ $articles := where .Site.RegularPages "Section" "articles" }}
             {{ range first 1 $articles }}
-                <!-- Debug: Article title -->
-                {{ printf "Debug: Processing article: %s" .Title }}
-                
                 {{ if .Params.image }}
-                    <!-- Debug: Image path -->
-                    {{ printf "Debug: Attempting to load image: %s" .Params.image }}
-                    
                     {{ with resources.Get .Params.image }}
-                        <div class="mb-4">
-                            <a href="{{ $.Permalink }}">
-                                <img src="{{ .Permalink }}" 
-                                     class="w-full h-full object-cover" 
-                                     alt="{{ $.Title }}">
-                            </a>
-                            <div class="text-sm text-gray-500 mt-1">
-                                {{ $.Params.image_credit }} • {{ $.Params.image_date }}
-                            </div>
+                        {{ $image := .Resize "800x" }}
+                        <div class="mb-6">
+                            <figure class="mb-2">
+                                <a href="{{ $.Permalink }}">
+                                    <img src="{{ $image.Permalink }}" 
+                                         class="w-full h-auto object-cover rounded-lg" 
+                                         alt="{{ $.Title }}">
+                                </a>
+                                <figcaption class="text-sm text-gray-600 italic mt-2">
+                                    {{ $.Params.image_credit }} • {{ $.Params.image_date }}
+                                </figcaption>
+                            </figure>
                         </div>
-                    {{ else }}
-                        <!-- Debug: Image not found -->
-                        <div class="text-red-500">Debug: Failed to load image: {{ $.Params.image }}</div>
                     {{ end }}
                 {{ end }}
 
@@ -39,9 +30,6 @@
                 <div class="text-sm text-gray-500">
                     By {{ .Params.author }} • {{ .Date.Format "January 2, 2006" }}
                 </div>
-            {{ else }}
-                <!-- Debug: No articles found -->
-                <div>Debug: No articles found in content/articles/</div>
             {{ end }}
         </div>
 
