@@ -1,3 +1,25 @@
 {
-    "schema": {}
+    "schema": {
+      "collections": {
+        "article": {
+          "path": "content/articles",
+          "format": "md",
+          "fields": {
+            "title": {
+              "type": "string",
+              "required": true,
+              "isTitle": true
+            },
+            "date": {
+              "type": "datetime",
+              "required": true
+            },
+            "body": {
+              "type": "rich-text",
+              "isBody": true
+            }
+          }
+        }
+      }
+    }
   }
