@@ -15,24 +15,20 @@
                     <!-- Debug: Image path -->
                     {{ printf "Debug: Attempting to load image: %s" .Params.image }}
                     
-                    {{ $image := resources.Get .Params.image }}
-                    {{ if $image }}
-                        <!-- Debug: Image found -->
-                        {{ printf "Debug: Successfully loaded image" }}
-                        {{ $processed := $image.Resize "600x" }}
+                    {{ with resources.Get .Params.image }}
                         <div class="mb-4">
-                            <a href="{{ .Permalink }}">
-                                <img src="{{ $processed.RelPermalink }}" 
+                            <a href="{{ $.Permalink }}">
+                                <img src="{{ .Permalink }}" 
                                      class="w-full h-full object-cover" 
-                                     alt="{{ .Title }}">
+                                     alt="{{ $.Title }}">
                             </a>
                             <div class="text-sm text-gray-500 mt-1">
-                                {{ .Params.image_credit }} • {{ .Params.image_date }}
+                                {{ $.Params.image_credit }} • {{ $.Params.image_date }}
                             </div>
                         </div>
                     {{ else }}
                         <!-- Debug: Image not found -->
-                        <div class="text-red-500">Debug: Failed to load image: {{ .Params.image }}</div>
+                        <div class="text-red-500">Debug: Failed to load image: {{ $.Params.image }}</div>
                     {{ end }}
                 {{ end }}
 
