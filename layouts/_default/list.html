@@ -12,7 +12,7 @@
                     {{ with resources.Get $imagePath }}
                         {{ $image := .Resize "400x" }}
                         <div class="aspect-video bg-gray-200 mb-4">
-                            <a href="{{ $.Site.BaseURL }}articles/{{ $currentArticle.File.TranslationBaseName }}/">
+                            <a href="{{ relURL (printf "articles/%s" $currentArticle.File.TranslationBaseName) }}">
                                 <img src="{{ $image.RelPermalink }}" 
                                      class="w-full h-full object-cover" 
                                      alt="{{ $currentArticle.Title }}">
@@ -24,7 +24,7 @@
                     {{ end }}
                 {{ end }}
                 <h2 class="text-xl font-serif font-bold mb-2">
-                    <a href="{{ $.Site.BaseURL }}articles/{{ .File.TranslationBaseName }}/">{{ .Title }}</a>
+                    <a href="{{ relURL (printf "articles/%s" .File.TranslationBaseName) }}">{{ .Title }}</a>
                 </h2>
                 <p class="text-gray-600 mb-4">{{ .Params.description }}</p>
                 <div class="text-sm text-gray-500">
