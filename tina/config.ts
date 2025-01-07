@@ -1,20 +1,12 @@
 import { defineConfig } from "tinacms";
 
-const branch = process.env.GITHUB_BRANCH || process.env.HEAD || "master";
-
 export default defineConfig({
-  branch,
-  token: process.env.TINA_TOKEN,
-  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
+  branch: "master",  // Hardcode to master since that's what we use
+  clientId: "27d193c6-15ae-4535-9e34-94b111ebdc9a",
+  token: "5a16c5ff8a36420814629fbe69d7bd928df9ad09",
   build: {
     outputFolder: "docs/admin",
     publicFolder: "docs",
-  },
-  media: {
-    tina: {
-      mediaRoot: "assets/img",
-      publicFolder: "assets",
-    },
   },
   schema: {
     collections: [
@@ -46,5 +38,5 @@ export default defineConfig({
         ],
       },
     ],
-  },
+  }
 })
