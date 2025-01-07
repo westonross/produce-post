@@ -39,21 +39,23 @@
         </div>
     </header>
 
-    <!-- Navigation -->
-    <nav class="bg-white border-b">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex items-center space-x-6 h-12 text-sm">
-                <a href="{{ .Site.BaseURL | relURL }}" class="text-gray-900 font-medium">Home</a>
-                {{ $currentPage := . }}
-                {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-                    <a href="{{ printf "/categories/%s/" ($name | urlize) | relURL }}" 
-                       class="text-gray-600 hover:text-gray-900 {{ if eq $currentPage.RelPermalink (printf "/categories/%s/" ($name | urlize)) }}font-medium{{ end }}">
-                        {{ $name | humanize }}
-                    </a>
+<!-- Navigation -->
+<nav class="bg-white border-b">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-center space-x-6 h-12 text-sm">
+            <a href="{{ .Site.BaseURL }}" class="text-gray-900 font-medium">Home</a>
+            {{ $categories := slice }}
+            {{ range .Site.RegularPages }}
+                {{ $categories = $categories | append .Params.category }}
+            {{ end }}
+            {{ range uniq $categories }}
+                {{ with . }}
+                    <a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}/" class="text-gray-600">{{ . }}</a>
                 {{ end }}
-            </div>
+            {{ end }}
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- Market Ticker -->
     <div class="bg-gray-100 border-b">
