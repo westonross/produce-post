@@ -1,1 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Category on The Produce Post</title><link>https://westonross.github.io/produce-post/category/</link><description>Recent content in Category on The Produce Post</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 04 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://westonross.github.io/produce-post/category/index.xml" rel="self" type="application/rss+xml"/><item><title>Fresh News</title><link>https://westonross.github.io/produce-post/category/fresh-news/</link><pubDate>Thu, 04 Jan 2024 00:00:00 +0000</pubDate><guid>https://westonross.github.io/produce-post/category/fresh-news/</guid><description/></item><item><title>Markets</title><link>https://westonross.github.io/produce-post/category/markets/</link><pubDate>Thu, 04 Jan 2024 00:00:00 +0000</pubDate><guid>https://westonross.github.io/produce-post/category/markets/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Category on The Produce Post</title>
+    <link>http://localhost:1313/produce-post/category/</link>
+    <description>Recent content in Category on The Produce Post</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/produce-post/category/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fresh News</title>
+      <link>http://localhost:1313/produce-post/category/fresh-news/</link>
+      <pubDate>Thu, 04 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/produce-post/category/fresh-news/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Markets</title>
+      <link>http://localhost:1313/produce-post/category/markets/</link>
+      <pubDate>Thu, 04 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/produce-post/category/markets/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

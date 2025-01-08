@@ -1,13 +1,19 @@
 ---
-title: "Letter to the Editor: Cucumber's Concern"
-date: 2024-01-04
-author: "English Cucumber"
-category: "Fresh News"
-description: "Re: The Rise of Pickle Culture and Our Changing Appetites (Farm & Table, Dec. 27)"
-image: "img/cucumber-market.jpg"
-image_caption: "A fresh cucumber display at Union Square Farmers Market, untainted by pickling influence"
-image_credit: "Market Scene/The Produce Post"
-image_date: "January 2, 2024"
+author: English Cucumber
+category: Fresh News
+description: >-
+  Re: The Rise of Pickle Culture and Our Changing Appetites (Farm & Table, Dec.
+  27)
+image: img/cucumber-market.jpg
+image_caption: >-
+  A fresh cucumber display at Union Square Farmers Market, untainted by pickling
+  influence
+image_credit: Market Scene/The Produce Post
+image_date: 'January 2, 2024'
+title: 'Letter to the Editor: Cucumber''s Concern'
+date: 2024-01-04T00:00:00.000Z
+categories:
+  - Fresh News
 ---
 
 As a longtime fixture of salads, tea sandwiches, and crudité platters across America, I must address the deeply concerning shift in our culinary discourse. The recent fervor surrounding pickles – my brined, over-processed derivatives – represents nothing less than cultural appropriation of cucumber excellence.
@@ -43,10 +49,10 @@ This is not innovation; it's **vegetable vandalism**.
 
 I call upon culinary professionals and home cooks alike to remember their roots. Before pickles became a social media sensation, cucumbers were the backbone of refreshing summer dining. We don't need transformation in a jar to be relevant. Sometimes, fresh is just better.
 
-Sincerely,  
-English Cucumber  
+Sincerely,\
+English Cucumber\
 Upper Produce Drawer, Manhattan
 
----
+***
 
 *P.S. And don't even get me started on "half-sour" pickles. Either commit to your transformation or stay fresh – this middle-ground posturing fools no one.*
