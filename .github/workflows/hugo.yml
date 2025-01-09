@@ -1,73 +1,31 @@
 name: Hugo build
 
 on:
- push:
-   branches:
-     - master
-
-permissions:
- contents: read
- pages: write
- id-token: write
-
-concurrency:
- group: "pages"
- cancel-in-progress: false
+  push:
+    branches:
+      - master
 
 jobs:
- build:
-   runs-on: ubuntu-latest
-   environment:
-     name: github-pages
-     url: ${{ steps.deployment.outputs.page_url }}
-   steps:
-     - uses: actions/checkout@v3
-       with:
-         submodules: true
-         fetch-depth: 0
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+          fetch-depth: 0
 
-     - name: Setup Node.js
-       uses: actions/setup-node@v3
-       with:
-         node-version: '18'
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
 
-     - name: Setup Hugo
-       uses: peaceiris/actions-hugo@v2
-       with:
-         hugo-version: 'latest'
+      - name: Build
+        run: hugo --minify --destination docs
 
-     - name: Setup Pages
-       uses: actions/configure-pages@v4
-
-     - name: Install dependencies
-       run: npm install
-
-     - name: Install Tina CLI
-       run: npm install -g @tinacms/cli
-
-     - name: Initialize Tina Backend
-       env:
-         TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-         NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
-       run: npx tinacms init backend 
-
-     - name: Build TinaCMS admin
-       env:
-         TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-         NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
-       run: |
-         npx tinacms build
-         rm -rf docs/admin
-         cp -r static/admin docs/admin
-
-     - name: Build Hugo site
-       run: hugo --minify --destination docs
-
-     - name: Upload artifact
-       uses: actions/upload-pages-artifact@v2
-       with:
-         path: docs
-
-     - name: Deploy to GitHub Pages
-       id: deployment
-       uses: actions/deploy-pages@v3
+      - name: Commit and push
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add docs
+          git commit -m "Build site" || echo "No changes to commit"
+          git push
