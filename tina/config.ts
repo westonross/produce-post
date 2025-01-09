@@ -65,7 +65,7 @@ export default defineConfig({
             label: "Image Credit",
           },
           {
-            type: "string",
+            type: "datetime",
             name: "image_date",
             label: "Image Date",
           },
