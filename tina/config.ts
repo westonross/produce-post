@@ -4,7 +4,7 @@ const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "master"
 
 export default defineConfig({
   branch,
-  clientId: process.env.TINA_CLIENT_ID,  // Changed to use environment variable
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,  // Changed to use the correct env variable name
   token: process.env.TINA_TOKEN,
 
   build: {

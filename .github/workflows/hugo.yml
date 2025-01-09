@@ -47,7 +47,7 @@ jobs:
       - name: Build TinaCMS admin
         env:
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-          TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
+          NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
         run: |
           npx tinacms build
           rm -rf docs/admin
