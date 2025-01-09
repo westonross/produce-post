@@ -1,52 +1,29 @@
 import { defineConfig } from "tinacms";
 
-const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "master";
+const branch = "master";
 
 export default defineConfig({
   branch,
-  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,  // Changed to use the correct env variable name
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
   token: process.env.TINA_TOKEN,
-
   build: {
-    outputFolder: "admin",
     publicFolder: "static",
-  },
-  media: {
-    tina: {
-      publicFolder: "static",
-      mediaRoot: "img"
-    },
-  },
-  admin: {
-    auth: {
-      useLocalAuth: process.env.NODE_ENV === 'development',
-    },
-  },
-  search: {
-    tina: {
-      indexerToken: process.env.TINA_TOKEN,
-      stopwordLanguages: ['eng']
-    },
+    outputFolder: "admin",
   },
   schema: {
     collections: [
       {
-        name: "article",
-        label: "Articles",
+        name: "post",
+        label: "Posts",
         path: "content/articles",
+        format: "md",
         fields: [
           {
             type: "string",
-            name: "title",
             label: "Title",
+            name: "title",
+            required: true,
             isTitle: true,
-            required: true,
-          },
-          {
-            type: "string",
-            name: "author",
-            label: "Author",
-            required: true,
           },
           {
             type: "datetime",
@@ -56,41 +33,21 @@ export default defineConfig({
           },
           {
             type: "string",
-            name: "description",
-            label: "Description",
-          },
-          {
-            type: "string",
-            name: "categories",
+            name: "category",
             label: "Category",
             required: true,
           },
           {
             type: "string",
-            name: "image",
-            label: "Image Path",
-          },
-          {
-            type: "string",
-            name: "image_caption",
-            label: "Image Caption",
-          },
-          {
-            type: "string",
-            name: "image_credit",
-            label: "Image Credit",
-          },
-          {
-            type: "datetime",
-            name: "image_date",
-            label: "Image Date",
+            name: "description",
+            label: "Description"
           },
           {
             type: "rich-text",
             name: "body",
             label: "Body",
             isBody: true,
-          },
+          }
         ],
       },
     ],
