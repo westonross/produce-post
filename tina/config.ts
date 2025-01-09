@@ -42,12 +42,32 @@ export default defineConfig({
             name: "categories",
             label: "Category",
             required: true,
-            options: ["Markets", "Fresh News"]  // Only the categories we actually have
+            options: ["Markets", "Fresh News"]
           },
           {
             type: "string",
             name: "description",
             label: "Description",
+          },
+          {
+            type: "string",
+            name: "image",
+            label: "Image Path",
+          },
+          {
+            type: "string",
+            name: "image_caption",
+            label: "Image Caption",
+          },
+          {
+            type: "string",
+            name: "image_credit",
+            label: "Image Credit",
+          },
+          {
+            type: "string",
+            name: "image_date",
+            label: "Image Date",
           },
           {
             type: "rich-text",
