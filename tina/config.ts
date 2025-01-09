@@ -1,10 +1,11 @@
 import { defineConfig } from "tinacms";
 
-const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "master";
+// Replace the old branch line with this simpler version
+const branch = "master";
 
 export default defineConfig({
   branch,
-  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,  // Changed to use the correct env variable name
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
   token: process.env.TINA_TOKEN,
 
   build: {
@@ -19,15 +20,10 @@ export default defineConfig({
   },
   admin: {
     auth: {
-      useLocalAuth: process.env.NODE_ENV === 'development',
+      useLocalAuth: false, // Changed this to be explicit
     },
   },
-  search: {
-    tina: {
-      indexerToken: process.env.TINA_TOKEN,
-      stopwordLanguages: ['eng']
-    },
-  },
+  // Add your schema configuration here
   schema: {
     collections: [
       {
@@ -40,12 +36,6 @@ export default defineConfig({
             name: "title",
             label: "Title",
             isTitle: true,
-            required: true,
-          },
-          {
-            type: "string",
-            name: "author",
-            label: "Author",
             required: true,
           },
           {
@@ -64,26 +54,6 @@ export default defineConfig({
             name: "categories",
             label: "Category",
             required: true,
-          },
-          {
-            type: "string",
-            name: "image",
-            label: "Image Path",
-          },
-          {
-            type: "string",
-            name: "image_caption",
-            label: "Image Caption",
-          },
-          {
-            type: "string",
-            name: "image_credit",
-            label: "Image Credit",
-          },
-          {
-            type: "datetime",
-            name: "image_date",
-            label: "Image Date",
           },
           {
             type: "rich-text",
