@@ -49,7 +49,6 @@ jobs:
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
           NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
         run: |
-          npx tinacms init backend
           npx tinacms build
           rm -rf docs/admin
           cp -r static/admin docs/admin
