@@ -1,46 +1,58 @@
 name: Hugo build
 
 on:
-  push:
-    branches:
-      - master
+ push:
+   branches:
+     - master
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          submodules: true
-          fetch-depth: 0
+ deploy:
+   runs-on: ubuntu-latest
+   permissions:
+     contents: write
+   steps:
+     - uses: actions/checkout@v3
+       with:
+         submodules: true
+         fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+     - name: Setup Node.js
+       uses: actions/setup-node@v3
+       with:
+         node-version: '18'
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 'latest'
+     - name: Setup Hugo
+       uses: peaceiris/actions-hugo@v2
+       with:
+         hugo-version: 'latest'
 
-      - name: Install dependencies
-        run: npm install
+     - name: Install dependencies
+       run: npm install
 
-      - name: Build TinaCMS admin
-        env:
-          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-        run: npx tinacms build
+     - name: Debug info
+       run: |
+         echo "Listing contents of current directory:"
+         ls -la
+         echo "Listing contents of admin directory (if exists):"
+         ls -la admin || echo "No admin directory found"
+         echo "Listing contents of docs/admin (if exists):"
+         ls -la docs/admin || echo "No docs/admin directory found"
 
-      - name: Build Hugo site
-        run: hugo --minify --destination docs
+     - name: Build TinaCMS admin
+       env:
+         TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+         NEXT_PUBLIC_TINA_CLIENT_ID: daaad536-8618-435c-8be3-6430f14ba245
+       run: |
+         npx tinacms build
+         cp -r admin docs/admin
 
-      - name: Commit and push changes
-        run: |
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
-          git add docs
-          git commit -m "Rebuild site" || echo "No changes to commit"
-          git push
+     - name: Build Hugo site
+       run: hugo --minify --destination docs
+
+     - name: Commit and push changes
+       run: |
+         git config --global user.name 'GitHub Actions'
+         git config --global user.email 'actions@github.com'
+         git add docs
+         git commit -m "Rebuild site" || echo "No changes to commit"
+         git push
