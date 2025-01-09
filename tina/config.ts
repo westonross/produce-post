@@ -13,8 +13,8 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: "post",
-        label: "Posts",
+        name: "article",    // Changed from "post" to "article"
+        label: "Articles",  // Updated label as well
         path: "content/articles",
         format: "md",
         fields: [
@@ -33,7 +33,7 @@ export default defineConfig({
           },
           {
             type: "string",
-            name: "category",
+            name: "categories",  // Changed from category to categories to match your content
             label: "Category",
             required: true,
           },
