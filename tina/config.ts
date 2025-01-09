@@ -1,16 +1,11 @@
 import { defineConfig } from "tinacms";
 
-const branch =
-  process.env.GITHUB_BRANCH ||
-  process.env.VERCEL_GIT_COMMIT_REF ||
-  process.env.HEAD ||
-  "master";
+const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "master";
 
 export default defineConfig({
   branch,
-
-  clientId: "daaad536-8618-435c-8be3-6430f14ba245",  // Your client ID from the Tina Cloud dashboard
-  token: process.env.TINA_TOKEN,  // Leave this for now, we'll set it up next
+  clientId: process.env.TINA_CLIENT_ID,  // Changed to use environment variable
+  token: process.env.TINA_TOKEN,
 
   build: {
     outputFolder: "admin",
@@ -18,8 +13,19 @@ export default defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: "assets/img",
       publicFolder: "static",
+      mediaRoot: "img"
+    },
+  },
+  admin: {
+    auth: {
+      useLocalAuth: process.env.NODE_ENV === 'development',
+    },
+  },
+  search: {
+    tina: {
+      indexerToken: process.env.TINA_TOKEN,
+      stopwordLanguages: ['eng']
     },
   },
   schema: {
