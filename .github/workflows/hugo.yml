@@ -1,71 +1,78 @@
 name: Hugo build
 
 on:
- push:
-   branches:
-     - master
+  push:
+    branches:
+      - master
 
 jobs:
- deploy:
-   runs-on: ubuntu-latest
-   permissions:
-     contents: write
-   steps:
-     - uses: actions/checkout@v3
-       with:
-         submodules: true
-         fetch-depth: 0
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+          fetch-depth: 0
 
-     - name: Setup Node.js
-       uses: actions/setup-node@v3
-       with:
-         node-version: '18'
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
-     - name: Setup Hugo
-       uses: peaceiris/actions-hugo@v2
-       with:
-         hugo-version: 'latest'
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
 
-     - name: Install dependencies
-       run: npm install
+      - name: Install dependencies
+        run: npm install
 
-     - name: Debug info
-       run: |
-         echo "Listing contents of current directory:"
-         ls -la
-         echo "Listing contents of static/admin (if exists):"
-         ls -la static/admin || echo "No static/admin directory found"
-         echo "Listing contents of docs/admin (if exists):"
-         ls -la docs/admin || echo "No docs/admin directory found"
+      - name: Debug info
+        run: |
+          echo "Listing contents of current directory:"
+          ls -la
+          echo "Listing contents of static/admin (if exists):"
+          ls -la static/admin || echo "No static/admin directory found"
+          echo "Listing contents of docs/admin (if exists):"
+          ls -la docs/admin || echo "No docs/admin directory found"
 
-     - name: Build TinaCMS admin
-       env:
-         TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-         NEXT_PUBLIC_TINA_CLIENT_ID: daaad536-8618-435c-8be3-6430f14ba245
-       run: |
-         npx tinacms build
-         mkdir -p docs/admin
-         cp -r static/admin/* docs/admin/
-         echo "Contents of docs/admin after copy:"
-         ls -la docs/admin
+      - name: Build TinaCMS admin
+        env:
+          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+          NEXT_PUBLIC_TINA_CLIENT_ID: daaad536-8618-435c-8be3-6430f14ba245
+        run: |
+          npx tinacms build
+          rm -rf docs/admin
+          cp -r static/admin docs/admin
+          echo "Contents of docs/admin after copy:"
+          ls -la docs/admin
 
-     - name: Build Hugo site
-       run: hugo --minify --destination docs
+      - name: Build Hugo site
+        run: |
+          hugo --minify --destination docs
+          # Ensure admin files weren't overwritten
+          if [ ! -f docs/admin/index.html ]; then
+            echo "Restoring admin files after Hugo build"
+            rm -rf docs/admin
+            cp -r static/admin docs/admin
+          fi
 
-     - name: Commit and push changes
-       run: |
-         echo "Current git status:"
-         git status
-         
-         echo "Configuring git:"
-         git config --global user.name 'GitHub Actions'
-         git config --global user.email 'actions@github.com'
-         
-         echo "Adding changes:"
-         git add docs
-         
-         echo "Committing changes:"
-         git commit -m "Rebuild site with TinaCMS admin $(date)" || echo "No changes to commit"
-         
-         echo "Pushing changes:"
-         git push origin master
+      - name: Commit and push changes
+        run: |
+          echo "Current git status:"
+          git status
+          
+          echo "Configuring git:"
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          
+          echo "Adding changes:"
+          git add docs
+          
+          echo "Committing changes:"
+          git commit -m "Rebuild site with TinaCMS admin $(date)" || echo "No changes to commit"
+          
+          echo "Pushing changes:"
+          git push origin master
