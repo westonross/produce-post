@@ -13,8 +13,8 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: "article",    // Changed from "post" to "article"
-        label: "Articles",  // Updated label as well
+        name: "article",
+        label: "Articles",
         path: "content/articles",
         format: "md",
         fields: [
@@ -33,14 +33,21 @@ export default defineConfig({
           },
           {
             type: "string",
-            name: "categories",  // Changed from category to categories to match your content
-            label: "Category",
+            name: "author",
+            label: "Author",
             required: true,
           },
           {
             type: "string",
+            name: "categories",
+            label: "Category",
+            required: true,
+            options: ["Markets", "Fresh News"]  // Only the categories we actually have
+          },
+          {
+            type: "string",
             name: "description",
-            label: "Description"
+            label: "Description",
           },
           {
             type: "rich-text",
@@ -49,7 +56,7 @@ export default defineConfig({
             isBody: true,
           }
         ],
-      },
+      }
     ],
   },
 });
