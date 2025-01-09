@@ -3,7 +3,7 @@ name: Hugo build
 on:
   push:
     branches:
-      - master  # Changed from main to master
+      - master  # Already correct in your file
 
 jobs:
   deploy:
@@ -16,12 +16,23 @@ jobs:
           submodules: true
           fetch-depth: 0
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
 
-      - name: Build
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build TinaCMS admin
+        run: npx tinacms build
+
+      - name: Build Hugo site
         run: hugo --minify --destination docs
 
       - name: Commit and push changes
