@@ -6,6 +6,9 @@
     <title>{{ .Site.Title }}{{ if not .IsHome }} | {{ .Title }}{{ end }}</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/papaparse/5.4.1/papaparse.min.js"></script>
     <style>
         a:hover {
             color: #FFA500;
@@ -64,6 +67,7 @@
 </nav>
 
     <!-- Market Ticker -->
+    <div id="market-ticker"></div>
     <div class="bg-gray-100 border-b">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex items-center space-x-8 h-10 text-sm">
@@ -103,5 +107,6 @@
             </div>
         </div>
     </footer>
+    <script type="module" src="/js/components/MarketTicker.jsx"></script>
 </body>
 </html>
