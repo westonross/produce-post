@@ -1,6 +1,5 @@
 ---
 author: English Cucumber
-category: Fresh News
 description: >-
   Re: The Rise of Pickle Culture and Our Changing Appetites (Farm & Table, Dec.
   27)
@@ -11,7 +10,7 @@ image_caption: >-
 image_credit: Market Scene/The Produce Post
 image_date: 'January 2, 2024'
 title: 'Letter to the Editor: Cucumber''s Concern'
-date: 2024-01-04T00:00:00.000Z
+date: 2024-01-04
 categories:
   - Fresh News
 ---

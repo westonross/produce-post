@@ -1,5 +1,4 @@
 ---
-category: Markets
 title: 'Breaking: Artisanal Salt Demands Equal Recognition'
 author: Kosher Crystal
 date: 2024-01-04T00:00:00.000Z
@@ -8,7 +7,7 @@ categories: Markets
 image: img/salt2.jpg
 image_caption: 'Nice spices, grocery store shopping trip'
 image_credit: Market Scene/The Produce Post
-image_date: 2024-01-02T05:00:00.000Z
+image_date: 2024-01-02
 ---
 
 In a shocking development that has rocked the culinary world, traditional sea salt varieties are demanding equal recognition amid the continuing dominance of Himalayan Pink Salt in upscale restaurants and food photography.
