@@ -3,15 +3,9 @@
 /resources/_gen/
 .hugo_build.lock
 
-# Node
-node_modules/
-
 # VS Code
 .vscode/
 
 # OS files
 .DS_Store
 Thumbs.db
-
-# TinaCMS
-.tina/__generated__
