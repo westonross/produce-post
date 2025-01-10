@@ -6,9 +6,7 @@
     <title>{{ .Site.Title }}{{ if not .IsHome }} | {{ .Title }}{{ end }}</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/papaparse/5.4.1/papaparse.min.js"></script>
+
     <style>
         a:hover {
             color: #FFA500;
@@ -66,8 +64,28 @@
     </div>
 </nav>
 
-    <!-- Market Ticker -->
-    <div id="market-ticker"></div>
+<!-- Market Ticker -->
+<div class="bg-gray-100 border-b">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-center space-x-8 h-10 text-sm">
+            <div class="flex items-center space-x-2">
+                <span class="font-medium">Avocados</span>
+                <span>$2.49</span>
+                <span class="text-green-600">+0.32</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span class="font-medium">Heirloom</span>
+                <span>$4.99</span>
+                <span class="text-red-600">-0.15</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span class="font-medium">Kale Futures</span>
+                <span>$3.29</span>
+                <span class="text-green-600">+0.89</span>
+            </div>
+        </div>
+    </div>
+</div>
 
 
     <!-- Main Content -->
@@ -87,6 +105,5 @@
             </div>
         </div>
     </footer>
-    <script type="module" src="/js/components/MarketTicker.jsx"></script>
 </body>
 </html>
