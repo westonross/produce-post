@@ -1,0 +1,29 @@
+.ticker-bar {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+  }
+  
+  .ticker-bar-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2000px; /* Set the width to a large number */
+    animation: ticker-bar 20s linear infinite;
+  }
+  
+  .ticker-bar-content a {
+    display: inline-block;
+    width: 150px;
+    margin-right: 10px;
+  }
+  
+  @keyframes ticker-bar {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
