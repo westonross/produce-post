@@ -7,3 +7,14 @@ publishDir = "docs"
 [taxonomies]
   category = "categories"
   tag = "tags"
+  
+[build]
+  writeStats = true
+
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+
+[params]
+  js = ["js/main.js"]

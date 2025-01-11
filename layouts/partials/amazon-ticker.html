@@ -1,0 +1,17 @@
+{{ $js := resources.Get "js/main.js" | js.Build }}
+{{ $jsonPath := "data/amazon_products.json" }}
+<script>
+    window.amazonProductsJsonPath = "{{ $jsonPath }}";
+</script>
+<script src="{{ $js.Permalink }}" defer></script>
+
+<div class="bg-gray-100 border-b overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="h-10 relative">
+            <div class="amazon-ticker absolute whitespace-nowrap flex items-center">
+                <!-- JavaScript will populate this -->
+            </div>
+        </div>
+    </div>
+</div>
+
