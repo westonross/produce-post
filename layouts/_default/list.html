@@ -4,7 +4,7 @@
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {{ $categoryTitle := .Title }}
-        {{ range where .Site.RegularPages "Params.category" $categoryTitle }}
+        {{ range where .Site.RegularPages "Params.categories" $categoryTitle }}
             {{ $currentArticle := . }}
             <article class="border-b pb-8">
                 {{ if .Params.image }}

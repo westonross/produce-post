@@ -1,5 +1,6 @@
 ---
 author: English Cucumber
+categories: Fresh News
 description: >-
   Re: The Rise of Pickle Culture and Our Changing Appetites (Farm & Table, Dec.
   27)
@@ -11,8 +12,6 @@ image_credit: Market Scene/The Produce Post
 image_date: 'January 2, 2024'
 title: 'Letter to the Editor: Cucumber''s Concern'
 date: 2024-01-04
-categories:
-  - Fresh News
 ---
 
 As a longtime fixture of salads, tea sandwiches, and crudité platters across America, I must address the deeply concerning shift in our culinary discourse. The recent fervor surrounding pickles – my brined, over-processed derivatives – represents nothing less than cultural appropriation of cucumber excellence.

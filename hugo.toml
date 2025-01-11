@@ -5,5 +5,5 @@ title = "The Produce Post"
 publishDir = "docs"
 
 [taxonomies]
-  category = "category"
+  category = "categories"
   tag = "tags"
