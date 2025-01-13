@@ -9,6 +9,287 @@
         "name": "Instant Pot",
         "price": 79.99,
         "affiliate_link": "https://amazon.com/dp/B00FLYWNYQ?tag=yourid-20"
+      },
+      {
+        "name": "KitchenAid Stand Mixer Professional 600 Series",
+        "price": 529.99,
+        "affiliate_link": "https://amazon.com/dp/B000P9CWQK?tag=yourid-20"
+      },
+      {
+        "name": "Vitamix E310 Explorian Blender",
+        "price": 349.99,
+        "affiliate_link": "https://amazon.com/dp/B0758JHZM3?tag=yourid-20"
+      },
+      {
+        "name": "Ninja Foodi 9-in-1 Deluxe XL",
+        "price": 219.99,
+        "affiliate_link": "https://amazon.com/dp/B07S85TVQJ?tag=yourid-20"
+      },
+      {
+        "name": "Lodge Cast Iron Skillet, 12 Inch",
+        "price": 29.99,
+        "affiliate_link": "https://amazon.com/dp/B00006JSUA?tag=yourid-20"
+      },
+      {
+        "name": "OXO Good Grips Container Set, 8-Piece",
+        "price": 59.99,
+        "affiliate_link": "https://amazon.com/dp/B003FGW5Y0?tag=yourid-20"
+      },
+      {
+        "name": "Cuisinart Food Processor, 14 Cup",
+        "price": 199.99,
+        "affiliate_link": "https://amazon.com/dp/B01AXM4WV2?tag=yourid-20"
+      },
+      {
+        "name": "Instant Pot Duo Plus 9-in-1",
+        "price": 119.99,
+        "affiliate_link": "https://amazon.com/dp/B075CYMYK6?tag=yourid-20"
+      },
+      {
+        "name": "Calphalon Nonstick Cookware Set, 10-Piece",
+        "price": 199.99,
+        "affiliate_link": "https://amazon.com/dp/B01HZXIX8Q?tag=yourid-20"
+      },
+      {
+        "name": "Breville Smart Oven Air Fryer Pro",
+        "price": 399.99,
+        "affiliate_link": "https://amazon.com/dp/B081XVLQ47?tag=yourid-20"
+      },
+      {
+        "name": "Zojirushi Rice Cooker, 5.5 Cup",
+        "price": 159.99,
+        "affiliate_link": "https://amazon.com/dp/B00007J5U7?tag=yourid-20"
+      },
+      {
+        "name": "Victorinox Fibrox Pro Chef's Knife, 8 Inch",
+        "price": 39.99,
+        "affiliate_link": "https://amazon.com/dp/B008M5U1C2?tag=yourid-20"
+      },
+      {
+        "name": "Ninja Professional Plus Blender",
+        "price": 99.99,
+        "affiliate_link": "https://amazon.com/dp/B086PQNF68?tag=yourid-20"
+      },
+      {
+        "name": "Anova Culinary Sous Vide Precision Cooker",
+        "price": 199.99,
+        "affiliate_link": "https://amazon.com/dp/B07C7PW3PC?tag=yourid-20"
+      },
+      {
+        "name": "Pyrex Glass Mixing Bowl Set, 3-Piece",
+        "price": 24.99,
+        "affiliate_link": "https://amazon.com/dp/B00LGLHZNM?tag=yourid-20"
+      },
+      {
+        "name": "Nordic Ware Natural Aluminum Baking Sheet Set",
+        "price": 29.99,
+        "affiliate_link": "https://amazon.com/dp/B0764QKPHZ?tag=yourid-20"
+      },
+      {
+        "name": "Microplane Premium Zester/Grater",
+        "price": 14.99,
+        "affiliate_link": "https://amazon.com/dp/B00004S7V8?tag=yourid-20"
+      },
+      {
+        "name": "ThermoPro Digital Meat Thermometer",
+        "price": 19.99,
+        "affiliate_link": "https://amazon.com/dp/B014DAVHSQ?tag=yourid-20"
+      },
+      {
+        "name": "Rubbermaid Brilliance Food Storage Set, 14-Piece",
+        "price": 44.99,
+        "affiliate_link": "https://amazon.com/dp/B01JCNEJVQ?tag=yourid-20"
+      },
+      {
+        "name": "Le Creuset Enameled Cast Iron Dutch Oven, 5.5 Qt",
+        "price": 369.99,
+        "affiliate_link": "https://amazon.com/dp/B01MXYR25Q?tag=yourid-20"
+      },
+      {
+        "name": "Cuisinart Belgian Waffle Maker",
+        "price": 59.99,
+        "affiliate_link": "https://amazon.com/dp/B00006F2MD?tag=yourid-20"
+      },
+      {
+        "name": "Hamilton Beach Digital Food Dehydrator",
+        "price": 79.99,
+        "affiliate_link": "https://amazon.com/dp/B07MPC7C8G?tag=yourid-20"
+      },
+      {
+        "name": "Stasher Reusable Silicone Storage Bags, 4-Pack",
+        "price": 54.99,
+        "affiliate_link": "https://amazon.com/dp/B07B9KG1RC?tag=yourid-20"
+      },
+      {
+        "name": "OXO Good Grips Box Grater",
+        "price": 19.99,
+        "affiliate_link": "https://amazon.com/dp/B004YZENBY?tag=yourid-20"
+      },
+      {
+        "name": "Coffee Gator Pour Over Coffee Maker",
+        "price": 29.99,
+        "affiliate_link": "https://amazon.com/dp/B07QKZQ3H6?tag=yourid-20"
+      },
+      {
+        "name": "Crock-Pot 6-Quart Programmable Slow Cooker",
+        "price": 49.99,
+        "affiliate_link": "https://amazon.com/dp/B004P2NG0K?tag=yourid-20"
+      },
+      {
+        "name": "Silpat Premium Non-Stick Silicone Baking Mat",
+        "price": 24.99,
+        "affiliate_link": "https://amazon.com/dp/B00008T960?tag=yourid-20"
+      },
+      {
+        "name": "Nespresso Vertuo Coffee and Espresso Machine",
+        "price": 199.99,
+        "affiliate_link": "https://amazon.com/dp/B01MG4VZCT?tag=yourid-20"
+      },
+      {
+        "name": "OXO Good Grips Salad Spinner",
+        "price": 29.99,
+        "affiliate_link": "https://amazon.com/dp/B00004OCKR?tag=yourid-20"
+      },
+      {
+        "name": "Global 7-piece Knife Block Set",
+        "price": 499.99,
+        "affiliate_link": "https://amazon.com/dp/B00280MZHY?tag=yourid-20"
+      },
+      {
+        "name": "Cuisinart Ice Cream Maker, 2 Quart",
+        "price": 89.99,
+        "affiliate_link": "https://amazon.com/dp/B003KYSLMW?tag=yourid-20"
+      },
+      {
+        "name": "Joseph Joseph Nest 9 Plus Bowl Set",
+        "price": 49.99,
+        "affiliate_link": "https://amazon.com/dp/B00GILJZM4?tag=yourid-20"
+      },
+      {
+        "name": "Ball Mason Jars, Wide Mouth 16 oz (12 Pack)",
+        "price": 29.99,
+        "affiliate_link": "https://amazon.com/dp/B08YS1PJJM?tag=yourid-20"
+      },
+      {
+        "name": "KitchenAid Fresh Prep Slicer/Shredder Attachment",
+        "price": 49.99,
+        "affiliate_link": "https://amazon.com/dp/B00XPRRHYW?tag=yourid-20"
+      },
+      {
+        "name": "Instant Pot Air Fryer Lid",
+        "price": 89.99,
+        "affiliate_link": "https://amazon.com/dp/B07VF7J5VQ?tag=yourid-20"
+      },
+      {
+        "name": "Tramontina Professional Aluminum Nonstick Pan, 12 Inch",
+        "price": 39.99,
+        "affiliate_link": "https://amazon.com/dp/B009HBKQ16?tag=yourid-20"
+      },
+      {
+        "name": "Chef'n FreshForce Citrus Juicer",
+        "price": 24.99,
+        "affiliate_link": "https://amazon.com/dp/B002XOB0P0?tag=yourid-20"
+      },
+      {
+        "name": "Instant Vortex Plus Air Fryer Oven, 10 Quart",
+        "price": 119.99,
+        "affiliate_link": "https://amazon.com/dp/B07VM28XTR?tag=yourid-20"
+      },
+      {
+        "name": "Dash Mini Waffle Maker",
+        "price": 12.99,
+        "affiliate_link": "https://amazon.com/dp/B01M9I779L?tag=yourid-20"
+      },
+      {
+        "name": "OXO Good Grips 3-Piece Wooden Spoon Set",
+        "price": 14.99,
+        "affiliate_link": "https://amazon.com/dp/B0001BMXIU?tag=yourid-20"
+      },
+      {
+        "name": "Keurig K-Elite Coffee Maker",
+        "price": 169.99,
+        "affiliate_link": "https://amazon.com/dp/B078NN17K3?tag=yourid-20"
+      },
+      {
+        "name": "Vitamix Food Processor Attachment",
+        "price": 199.99,
+        "affiliate_link": "https://amazon.com/dp/B08P5M5MFR?tag=yourid-20"
+      },
+      {
+        "name": "Bamboo Cutting Board Set with Juice Groove (3 Pieces)",
+        "price": 29.99,
+        "affiliate_link": "https://amazon.com/dp/B01MUXIPGF?tag=yourid-20"
+      },
+      {
+        "name": "MEATER+ Smart Meat Thermometer",
+        "price": 99.99,
+        "affiliate_link": "https://amazon.com/dp/B07H8WTFHW?tag=yourid-20"
+      },
+      {
+        "name": "Whynter ICM-201SB Ice Cream Maker",
+        "price": 299.99,
+        "affiliate_link": "https://amazon.com/dp/B01NAUMSOW?tag=yourid-20"
+      },
+      {
+        "name": "Breville Smart Grinder Pro Coffee Grinder",
+        "price": 199.99,
+        "affiliate_link": "https://amazon.com/dp/B00CONXYR4?tag=yourid-20"
+      },
+      {
+        "name": "All-Clad D3 Stainless Steel Saucepan, 3 Quart",
+        "price": 149.99,
+        "affiliate_link": "https://amazon.com/dp/B004T6MSIS?tag=yourid-20"
+      },
+      {
+        "name": "Ninja CREAMi Ice Cream Maker",
+        "price": 199.99,
+        "affiliate_link": "https://amazon.com/dp/B08QXC1TN8?tag=yourid-20"
+      },
+      {
+        "name": "OXO Good Grips POP Container Set, 10-Piece",
+        "price": 99.99,
+        "affiliate_link": "https://amazon.com/dp/B07GC2694R?tag=yourid-20"
+      },
+      {
+        "name": "Breville Bambino Plus Espresso Machine",
+        "price": 499.99,
+        "affiliate_link": "https://amazon.com/dp/B07JVD78TT?tag=yourid-20"
+      },
+      {
+        "name": "GreenPan Valencia Pro Ceramic Nonstick Pan Set",
+        "price": 149.99,
+        "affiliate_link": "https://amazon.com/dp/B07YN8NP7T?tag=yourid-20"
+      },
+      {
+        "name": "Cuisinart Custom 14-Cup Food Processor",
+        "price": 229.99,
+        "affiliate_link": "https://amazon.com/dp/B01AXM4WV2?tag=yourid-20"
+      },
+      {
+        "name": "Ninja Foodi Smart XL Pro Grill",
+        "price": 299.99,
+        "affiliate_link": "https://amazon.com/dp/B08P5WQDB6?tag=yourid-20"
+      },
+      {
+        "name": "OXO Good Grips Meat Tenderizer",
+        "price": 14.99,
+        "affiliate_link": "https://amazon.com/dp/B00004OCJJ?tag=yourid-20"
+      },
+      {
+        "name": "KitchenAid Pasta Roller Attachment Set",
+        "price": 199.99,
+        "affiliate_link": "https://amazon.com/dp/B01ENK4UV2?tag=yourid-20"
+      },
+      {
+        "name": "Zojirushi Home Bakery Virtuoso Plus Breadmaker",
+        "price": 339.99,
+        "affiliate_link": "https://amazon.com/dp/B07D19YT3D?tag=yourid-20"
+      },
+      {
+        "name": "Cuisinart MultiClad Pro Stainless Steel Cookware Set, 12-Piece",
+        "price": 299.99,
+        "affiliate_link": "https://amazon.com/dp/B009JXPS6U?tag=yourid-20"
       }
     ]
   }
+

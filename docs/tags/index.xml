@@ -1,1 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on The Produce Post</title><link>https://westonross.github.io/produce-post/tags/</link><description>Recent content in Tags on The Produce Post</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 12 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://westonross.github.io/produce-post/tags/index.xml" rel="self" type="application/rss+xml"/><item><title>Bread Crimes</title><link>https://westonross.github.io/produce-post/tags/bread-crimes/</link><pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate><guid>https://westonross.github.io/produce-post/tags/bread-crimes/</guid><description/></item><item><title>Fermentation Nation</title><link>https://westonross.github.io/produce-post/tags/fermentation-nation/</link><pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate><guid>https://westonross.github.io/produce-post/tags/fermentation-nation/</guid><description/></item><item><title>Sourdough Revolution</title><link>https://westonross.github.io/produce-post/tags/sourdough-revolution/</link><pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate><guid>https://westonross.github.io/produce-post/tags/sourdough-revolution/</guid><description/></item><item><title>Yeast Liberation</title><link>https://westonross.github.io/produce-post/tags/yeast-liberation/</link><pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate><guid>https://westonross.github.io/produce-post/tags/yeast-liberation/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on The Produce Post</title>
+    <link>http://localhost:1313/produce-post/tags/</link>
+    <description>Recent content in Tags on The Produce Post</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/produce-post/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bread Crimes</title>
+      <link>http://localhost:1313/produce-post/tags/bread-crimes/</link>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/produce-post/tags/bread-crimes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fermentation Nation</title>
+      <link>http://localhost:1313/produce-post/tags/fermentation-nation/</link>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/produce-post/tags/fermentation-nation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sourdough Revolution</title>
+      <link>http://localhost:1313/produce-post/tags/sourdough-revolution/</link>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/produce-post/tags/sourdough-revolution/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Yeast Liberation</title>
+      <link>http://localhost:1313/produce-post/tags/yeast-liberation/</link>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/produce-post/tags/yeast-liberation/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
