@@ -55,6 +55,7 @@
       "h-6",
       "h-auto",
       "h-full",
+      "hover:underline",
       "items-center",
       "justify-between",
       "last:border-0",

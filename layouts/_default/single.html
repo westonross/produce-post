@@ -1,8 +1,13 @@
+
+{{ define "url" }}
+  {{.Site.BaseURL }}{{.Section }}{{.File.BaseFileName }}
+{{ end }}
+
 {{ define "main" }}
 <article class="max-w-4xl mx-auto px-4 py-8">
     <!-- Article Header -->
     <header class="mb-8">
-        <div class="text-sm text-gray-500 mb-2">{{ .Params.category }}</div>
+        <div class="text-sm text-gray-500 mb-2">{{ .Params.categories }}</div>
         <h1 class="text-4xl font-serif font-bold mb-4">{{ .Title }}</h1>
         <div class="text-xl text-gray-600 mb-4">{{ .Params.description }}</div>
         <div class="text-sm text-gray-500">

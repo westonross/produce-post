@@ -1,5 +1,5 @@
 {{ $js := resources.Get "js/main.js" | js.Build }}
-{{ $jsonPath := "data/amazon_products.json" }}
+{{ $jsonPath := "data/amazon_products.json" | relURL }}
 <script>
     window.amazonProductsJsonPath = "{{ $jsonPath }}";
 </script>
@@ -14,4 +14,3 @@
         </div>
     </div>
 </div>
-

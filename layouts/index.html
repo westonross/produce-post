@@ -23,8 +23,9 @@
                 {{ end }}
 
                 <h2 class="text-3xl font-serif font-bold mb-2">
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    <a href="{{ .Permalink }}">{{.Title }}</a>
                 </h2>
+
                 <p class="text-xl text-gray-600 mb-4">{{ .Params.description }}</p>
                 <div class="text-sm text-gray-500">
                     By {{ .Params.author }} • {{ .Date.Format "January 2, 2006" }}
@@ -39,7 +40,7 @@
             <div class="pb-6 border-b last:border-0">
                 <div class="text-sm font-medium text-gray-500 mb-2">{{ .Params.category }}</div>
                 <h4 class="font-serif font-medium leading-snug">
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    <a href="{{ .Permalink }}">{{.Title }}</a>
                 </h4>
                 <div class="text-sm text-gray-500 mt-2">{{ .Date.Format "January 2, 2006" }}</div>
             </div>
@@ -47,13 +48,7 @@
         </div>
     </div>
 
-        <!-- Debug Info! -->
-    <div style="margin-top: 2rem; padding: 1rem; background-color: #f0f0f0; font-family: monospace; font-size: 0.8rem;">
-        <h4>Debug Infosss5fda:</h4>
-        <p>Build Time: {{ now.Format "2006-01-02 15:04:05 MST" }}</p>
-        <p>Hugo Version: {{ hugo.Version }}</p>
-        <p>Environment: {{ hugo.Environment }}</p>
-    </div>
+
 
 </div>
 
