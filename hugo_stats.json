@@ -67,6 +67,7 @@
       "max-w-none",
       "mb-2",
       "mb-4",
+      "mb-6",
       "mb-8",
       "md:grid-cols-2",
       "min-h-screen",
