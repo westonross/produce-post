@@ -3,7 +3,7 @@
 /resources/_gen/
 .hugo_build.lock
 /docs/
-
+hugo_stats.json
 # VS Code
 .vscode/
 
