@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="${product.affiliate_link}" 
                    class="flex items-center space-x-2 px-4 py-2 hover:bg-gray-200 transition-colors">
                     <span class="font-medium">${product.name}</span>
-                    <span>$${product.price.toFixed(2)}</span>
+                    <span>$${product.price.toFixed(80)}</span>
                 </a>
             `).join('');
  
