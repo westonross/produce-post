@@ -57,7 +57,8 @@
                 {{ end }}
             {{ end }}
             {{ range (uniq $categories) }}
-            <a href="{{ $.Site.BaseURL }}{{. | urlize }}/" class="text-gray-600">{{. }}</a>            {{ end }}
+                <a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}/" class="text-gray-600">{{ . }}</a>
+            {{ end }}
         </div>
     </div>
 </nav>
