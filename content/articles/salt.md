@@ -1,6 +1,6 @@
 ---
 title: 'Breaking: Artisanal Salt Demands Equal Recognition'
-categories: Markets
+categories: ["Markets"]
 author: Kosher Crystal
 date: 2024-01-04T00:00:00.000Z
 description: Claims Pink Privilege is Real in Seasoning Industry

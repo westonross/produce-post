@@ -3,7 +3,7 @@ title: 'The Great Cheese Heist: Uncovering the Gouda, the Bad, and the Ugly of A
 author: 'Brieanna Butterworth'
 date: '2023-12-15'
 description: 'A journey into the world of artisanal cheese, where the lines between gourmet and gimmick are blurred'
-categories: 'Food'
+categories: ["Food"]
 image: 'img/cheese-board.jpg'
 image_description: 'A dimly lit, rustic cheese shop. The walls are lined with wooden shelves, stacked high with wheels of cheese. The air is thick with the smell of aged gouda and the sound of soft chatter. A few patrons sit at a small table, sampling a selection of artisanal cheeses and crackers.'
 image_caption: 'The cheese board of dreams, or a dairy-induced nightmare?'

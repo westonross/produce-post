@@ -1,6 +1,6 @@
 ---
 author: English Cucumber
-categories: Fresh News
+categories: ["Fresh News"]
 description: >-
   Re: The Rise of Pickle Culture and Our Changing Appetites (Farm & Table, Dec.
   27)
