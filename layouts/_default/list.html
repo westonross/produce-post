@@ -4,35 +4,36 @@
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {{ $categoryTitle := .Title }}
-        {{ range where .Site.RegularPages "Params.categories" $categoryTitle }}
-            {{ $currentArticle := . }}
-            <article class="border-b pb-8">
-                {{ if .Params.image }}
-                    {{ with resources.Get .Params.image }}
-                        {{ $image := .Resize "400x" }}
-                        <div class="mb-4">
-                            <a href="{{ $currentArticle.Permalink }}" class="block aspect-[4/3] overflow-hidden">
-                                <img src="{{ $image.Permalink }}" 
-                                     class="w-full h-full object-cover" 
-                                     alt="{{ $currentArticle.Title }}">
-                            </a>
-                            <div class="text-sm text-gray-600 mt-2">
-                                {{ $currentArticle.Params.image_caption }} • {{ $currentArticle.Params.image_credit }} • {{ $currentArticle.Params.image_date }}
+        {{ range .Site.RegularPages.ByDate.Reverse }}
+            {{ if in .Params.categories $categoryTitle }}
+                {{ $currentArticle := . }}
+                <article class="border-b pb-8">
+                    {{ if .Params.image }}
+                        {{ with resources.Get .Params.image }}
+                            {{ $image := .Resize "400x" }}
+                            <div class="mb-4">
+                                <a href="{{ $currentArticle.Permalink }}" class="block aspect-[4/3] overflow-hidden">
+                                    <img src="{{ $image.Permalink }}" 
+                                         class="w-full h-full object-cover" 
+                                         alt="{{ $currentArticle.Title }}">
+                                </a>
+                                <div class="text-sm text-gray-600 mt-2">
+                                    {{ $currentArticle.Params.image_caption }} • {{ $currentArticle.Params.image_credit }} • {{ $currentArticle.Params.image_date }}
+                                </div>
                             </div>
-                        </div>
+                        {{ end }}
                     {{ end }}
-                {{ end }}
-                
-                <h2 class="text-xl font-serif font-bold mb-2">
-                    <a href="{{.Permalink }}">{{.Title }}</a>
-                </h2>
-                <p class="text-gray-600 mb-4">{{ .Params.description }}</p>
-                <div class="text-sm text-gray-500">
-                    By {{ .Params.author }} • {{ .Date.Format "January 2, 2006" }}
-                </div>
-            </article>
+                    
+                    <h2 class="text-xl font-serif font-bold mb-2">
+                        <a href="{{.Permalink }}">{{.Title }}</a>
+                    </h2>
+                    <p class="text-gray-600 mb-4">{{ .Params.description }}</p>
+                    <div class="text-sm text-gray-500">
+                        By {{ .Params.author }} • {{ .Date.Format "January 2, 2006" }}
+                    </div>
+                </article>
+            {{ end }}
         {{ end }}
     </div>
 </div>
 {{ end }}
-
